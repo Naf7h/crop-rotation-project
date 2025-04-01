@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="dashboard.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Farmer Dashboard</h1>
+            <p>Get AI-based crop rotation suggestions based on multiple factors.</p>
+        </header>
+
+        <section>
+            <h2>Enter Crop Details</h2>
+            <form id="crop-form">
+                <label for="previous-crop">Previous Crop:</label>
+                <select id="previous-crop">
+                    <option value="Wheat"></option>
+                    <option value="Maize">Maize</option>
+                    <option value="Millet">Millet</option>
+                    <option value="Soybeans">Soybeans</option>
+                    <option value="Barley">Barley</option>
+                    <option value="Pulses">Pulses</option>
+                    <option value="Ground Nuts">Ground Nuts</option>
+                    <option value="Sugarcane">Sugarcane</option>
+                    <option value="Tobacco">Tobacco</option>
+                    <option value="Cotton">Cotton</option>
+
+                </select>
+                
+
+                <label for="temperature">Average Temperature (°C):</label>
+                <input type="number" id="temperature" step="0.1" min="-5" max="40" required>
+
+                <label for="humidity">Humidity (%):</label>
+                <input type="number" id="humidity"  min="0" max="100" required>
+
+                <label for="moisture">Soil Moisture (%):</label>
+                <input type="number" id="moisture"  min="0" max="100" required>
+
+                <label for="soil-type">Soil Type:</label>
+                <select id="soil-type">
+                    <option value="Clay">Clay</option>
+                    <option value="Loamy">Loamy</option>
+                    <option value="Sandy">Sandy</option>
+                    <option value="Sandy">Red</option>
+                    <option value="Sandy">Black</option>
+                </select>
+                
+                <label for="soil-ph">Soil pH Level:</label>
+                <input type="number" id="soil-ph" step="0.1" min="0.0" max="14.0" required>
+
+                <label for="rainfall">Annual Rainfall (mm):</label>
+                <input type="number" id="rainfall" min="200" max="3000" required>
+
+                
+
+
+                <button type="submit">Get AI Suggestion</button>
+            </form>
+
+            <h2>Recommended Crop</h2>
+            <p id="ai-suggestion">Your AI-based crop suggestion will appear here.</p>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html" class="btn">Logout</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

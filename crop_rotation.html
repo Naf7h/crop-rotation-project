@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Rotation Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="crop_rotation.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Crop Rotation Recommendation</h1>
+            <p>Enter your land details to get the best crop rotation suggestions.</p>
+        </header>
+
+        <section>
+            <h2>Input Farm Details</h2>
+            <form id="crop-form">
+                <label for="land-size">Land Size (in acres):</label>
+                <input type="number" id="land-size" required>
+
+                <label for="soil-type">Soil Type:</label>
+                <select id="soil-type">
+                    <option value="Loamy">Loamy</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Sandy">Sandy</option>
+                    <option value="Silty">Silty</option>
+                </select>
+
+                <label for="previous-crop">Previous Crop Planted:</label>
+                <input type="text" id="previous-crop" required>
+
+                <button type="submit">Get Crop Suggestions</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Recommended Crops</h2>
+            <div id="recommendations"></div>
+        </section>
+
+        <div class="navigation">
+            <a href="dashboard.html" class="btn">Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>

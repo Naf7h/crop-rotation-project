@@ -1,0 +1,30 @@
+<form id="rotationForm">
+    <label for="previousCrop">Previous Crop:</label>
+    <input type="text" id="previousCrop" name="previousCrop">
+    
+    <label for="soilType">Soil Type:</label>
+    <input type="text" id="soilType" name="soilType">
+    
+    <button type="submit">Get Crop Rotation Suggestion</button>
+  </form>
+  
+  <div id="result"></div>
+  
+  <script>
+    document.getElementById('rotationForm').onsubmit = function(event) {
+      event.preventDefault();
+      var previousCrop = document.getElementById('previousCrop').value;
+      var soilType = document.getElementById('soilType').value;
+  
+      fetch('/suggest_rotation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ previous_crop: previousCrop, soil_type: soilType })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').innerHTML = "Suggested Crops: " + data.suggested_crops.join(", ");
+      });
+    };
+  </script>
+  

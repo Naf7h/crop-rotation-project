@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Data Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="data_analysis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for visualizing data -->
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Farm Data Analysis</h1>
+            <p>Input farm data to track soil health, crop rotation, and farming efficiency.</p>
+        </header>
+
+        <section>
+            <h2>Enter Farm Data</h2>
+            <form id="farm-data-form">
+                <label for="crop-type">Crop Type:</label>
+                <input type="text" id="crop-type" required>
+
+                <label for="soil-ph">Soil pH Level:</label>
+                <input type="number" id="soil-ph" step="0.1" required>
+
+                <label for="harvest-yield">Harvest Yield (kg):</label>
+                <input type="number" id="harvest-yield" required>
+
+                <button type="submit">Submit Data</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Soil Health Analysis</h2>
+            <canvas id="soil-chart"></canvas>
+        </section>
+
+        <section>
+            <h2>Crop Rotation History</h2>
+            <ul id="crop-history"></ul>
+        </section>
+
+        <div class="navigation">
+            <a href="dashboard.html" class="btn">Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>
